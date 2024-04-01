@@ -1,0 +1,36 @@
+public class RectangleDivision {
+    public static void main(String[] args) {
+        int N = 4; // Height of the rectangle
+        int M = 5; // Width of the rectangle
+        int K = 10; // Given integer K
+
+        long minCost = findMinCost(N, M, K);
+        System.out.println("Minimum Cost: " + minCost);
+    }
+
+    private static long findMinCost(int N, int M, int K) {
+        long[][] dp = new long[N + 1][M + 1];
+
+        // Initialize base cases
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= M; j++) {
+                long area = i * j;
+                dp[i][j] = (area - K) * (area - K);
+            }
+        }
+
+        // Fill the DP table
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= M; j++) {
+                for (int p = 1; p < i; p++) { // Horizontal cuts
+                    dp[i][j] = Math.min(dp[i][j], dp[p][j] + dp[i - p][j]);
+                }
+                for (int q = 1; q < j; q++) { // Vertical cuts
+                    dp[i][j] = Math.min(dp[i][j], dp[i][q] + dp[i][j - q]);
+                }
+            }
+        }
+
+        return dp[N][M];
+    }
+}

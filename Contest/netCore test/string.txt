@@ -1,0 +1,29 @@
+public class HighestFrequencyCharacter {
+    public static void main(String[] args) {
+        String S = "your_string_here";
+        int N = S.length();
+
+        long[] freq = new long[26]; // Frequency array for each character
+
+        // Calculate the frequency of each character
+        for (int i = 0; i < N; i++) {
+            int charIndex = S.charAt(i) - 'a';
+            freq[charIndex] += (long) (i + 1) * (N - i);
+        }
+
+        // Find the character with the highest frequency
+        char resultChar = '\0';
+        long maxFreq = -1;
+        for (int i = 0; i < 26; i++) {
+            if (freq[i] > maxFreq) {
+                maxFreq = freq[i];
+                resultChar = (char) (i + 'a');
+            }
+        }
+
+        // Print the character with the highest frequency and its frequency
+        System.out.println("Character with highest frequency: " + resultChar);
+        System.out.println("Frequency: " + maxFreq);
+    }
+}
+https://www.linkedin.com/in/raman-mehta-35393116b/
