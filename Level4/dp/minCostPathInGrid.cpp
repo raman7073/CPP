@@ -1,3 +1,9 @@
+/*
+Problem: Given a grid of size n*m, find the minimum cost path to reach the bottom right
+cell from the top left cell. You can only move right and down.
+
+
+*/
 #include <bits/stdc++.h>
 using namespace std;
 

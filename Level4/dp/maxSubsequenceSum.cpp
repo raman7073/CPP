@@ -1,3 +1,11 @@
+/*
+Problem: Max Subsequence Sum
+Problem Statement:
+Given an array of integers, find the maximum sum of a subsequence such that
+no two elements in the subsequence are adjacent to each other.
+
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
