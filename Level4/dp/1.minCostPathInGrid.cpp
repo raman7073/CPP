@@ -2,7 +2,14 @@
 Problem: Given a grid of size n*m, find the minimum cost path to reach the bottom right
 cell from the top left cell. You can only move right and down.
 
+Time Complexity :
+   Estimate =  number of states * transition time for each state
+   Exact = Total sum of transition time for all states
+Space Complexity :
+  Number of states * space required for eaac state
 
+TC =  O((n*m)*1) = O(nm)
+SC = O(mn)
 */
 #include <bits/stdc++.h>
 using namespace std;

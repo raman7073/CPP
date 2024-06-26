@@ -4,6 +4,10 @@ Problem Statement:
 Given an array of integers, find the maximum sum of a subsequence such that
 no two elements in the subsequence are adjacent to each other.
 
+TC  = n * 1 = n
+SC  = n
+
+
 */
 
 #include <bits/stdc++.h>
