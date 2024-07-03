@@ -24,7 +24,8 @@ int main()
         }
         else
         {
-
+            // it is guaranteed that a number occur exactly two times ,
+            // if diff between index where they occur is 2 then it will be counted
             if (i - fp[c] == 2)
             {
                 vcc++;
