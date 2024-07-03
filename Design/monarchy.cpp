@@ -41,27 +41,19 @@ public:
     {
         personMap[name]->isAlive = false;
     }
-
+    void dfs(Person *p, list<string> &suc)
+    {
+        if (p->isAlive)
+            suc.push_back(p->name);
+        for (Person *c : p->child)
+        {
+            dfs(c, suc);
+        }
+    }
     list<string> getOrderOfSuccession()
     {
         list<string> suc;
-        stack<Person *> st;
-        st.push(personMap[king]);
-
-        while (!st.empty())
-        {
-            Person *current = st.top();
-            st.pop();
-            if (current->isAlive)
-                suc.push_back(current->name);
-            // for (auto it = current->child)
-            // {
-            //     cout << *it;
-            // }
-            list<Person *>::iterator it;
-            for (it = current->child.begin(); it != current->child.end(); ++it)
-                st.push(*it);
-        }
+        dfs(personMap[king], suc);
 
         return suc;
     }
